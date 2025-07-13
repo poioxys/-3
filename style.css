@@ -1,0 +1,143 @@
+/* Fondo pastel */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ffe6f0, #ffddee);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.container {
+  text-align: center;
+}
+
+/* Pastel */
+.cake {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  margin: 0 auto;
+  animation: drop 1s ease-out forwards;
+  transform: translateY(-300px);
+}
+
+@keyframes drop {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.bottom-layer, .middle-layer, .top-layer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.bottom-layer {
+  width: 200px;
+  height: 60px;
+  background: #8B4513;
+  bottom: 0;
+}
+
+.middle-layer {
+  width: 160px;
+  height: 50px;
+  background: #A0522D;
+  bottom: 60px;
+}
+
+.top-layer {
+  width: 120px;
+  height: 40px;
+  background: #D2691E;
+  bottom: 110px;
+}
+
+/* Vela */
+.candle {
+  width: 10px;
+  height: 30px;
+  background: #fff;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  animation: flicker 0.3s infinite alternate;
+}
+
+.candle::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: orange;
+  border-radius: 50%;
+  box-shadow: 0 0 10px orange;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.2); }
+}
+
+/* Mensaje especial */
+.message-box {
+  margin-top: 30px;
+  animation: appear 2s ease-in-out;
+}
+
+.birthday-message {
+  font-size: 24px;
+  color: #ff1493;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6ec4, #ffc6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #ff99cc, 0 0 10px #ff33cc;
+  }
+  to {
+    text-shadow: 0 0 15px #ff66cc, 0 0 20px #ff99cc;
+  }
+}
+
+/* Corazón animado */
+.heart {
+  font-size: 40px;
+  color: red;
+  animation: heartbeat 1s infinite;
+  margin-top: 10px;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Animación de aparición */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
